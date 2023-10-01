@@ -320,7 +320,7 @@ def main():
     events = match_events(cursor, gw_data)
     db = convert_to_proto(events, args.include_name)
 
-    with open(args.output, 'w') as f:
+    with open(args.output, 'w', encoding="utf-8") as f:
         json.dump(json_format.MessageToDict(db), f, ensure_ascii=False, indent=2)
 
 
